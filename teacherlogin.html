@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+function validateForm() 
+{
+    const userIdValue = document.getElementById('user_id').value.trim();
+    const passwordValue = document.getElementById('password').value.trim();
+    if (userIdValue === 'pavan' && passwordValue === 'pavansir') 
+    {
+        return true;
+    } 
+    else 
+    {
+        alert('Invalid user-id or password. Please try again.');
+        return false;
+    }
+}
+</script>
+<img src="banner11.png" class="navs" width="1500px" height="90px">
+<div class="container">
+        <div class="title">Teacher Login</div>
+        <div class="content">
+            <form action="teachersearch.html" method="post" onsubmit="return validateForm();">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">User-id</span>
+                        <input type="text" id="user_id" placeholder="Enter your User-id">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="password" id="password" placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

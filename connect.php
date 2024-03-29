@@ -1,0 +1,21 @@
+<?php
+if(isset($_POST['StudentName'])||isset($_POST['RegistrationNumber'])||isset($_POST['CourseName'])||isset($_POST['System'])||isset($_POST['Outtime'])||isset($_POST['submit']))
+{
+$connection=mysqli_connect('localhost','root','','logregister');
+$StudentName=$_POST['StudentName'];
+$RegistrationNumber=$_POST['RegistrationNumber'];
+$CourseName=$_POST['CourseName'];
+$system=$_POST['System'];
+$Outtime=$_POST['Outtime'];
+$submit=$_POST['submit'];
+$insert=mysqli_query($connection,"INSERT INTO registration(StudentName,RegistrationNumber,CourseName,SystemNumber,Outtime)VALUES('$StudentName','$RegistrationNumber','$CourseName','$system','$Outtime')");
+if($insert==true)
+{
+    header("location:file.php");
+}
+else
+{
+    printf("FAIL");
+}
+}
+?>
